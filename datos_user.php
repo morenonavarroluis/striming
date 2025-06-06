@@ -1,11 +1,13 @@
 <?php
  
+ $id = $_SESSION['id']; 
+
  //conexion
 include "config/conexion.php";
 
 //consulta
 
-$consulta = "SELECT us.username, us.password, r.rol FROM users as us
+$consulta = "SELECT us.id ,us.username, us.password, r.rol FROM users as us
  INNER JOIN rols as r ON us.id_rol = r.id_rols";
 // Ejecutar la consulta
 $resultado = mysqli_query($conn, $consulta);
@@ -28,7 +30,7 @@ $resultado = mysqli_query($conn, $consulta);
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">usuario</h1>
                        
-                       <button class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#Modalregistro" style="float: right;">Nuevo Video</button>
+                       <button class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#Modalregistro" style="float: right;">Nuevo Usuario</button>
                             <br>
                             <br>
 
@@ -39,7 +41,6 @@ $resultado = mysqli_query($conn, $consulta);
                                     <thead class="table table-dark">
                                         <tr>
                                             <th>usuario</th>
-                                            <th>contraseña</th>
                                             <th>rols</th>
                                             <th>opcion</th>   
                                         </tr>
@@ -49,12 +50,12 @@ $resultado = mysqli_query($conn, $consulta);
                                       <?php   while ($row = mysqli_fetch_assoc($resultado)) { ?>
                                         <tr>
                                             <td><?php echo $row['username']; ?></td>
-                                            <td><?php echo $row['password']; ?></td>
                                             <td><?php echo $row['rol']; ?></td>
                                             <td class="text-center">
-                    
-                                               <button class="btn btn-danger center">Eliminar</button>     
-                                         
+                                              <form action="config/eliminar.php" method="POST">
+                                                    <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                                                    <button type="submit" class="btn btn-danger center">Eliminar</button>
+                                                </form>
                                             </td>
                                            
                                         </tr>

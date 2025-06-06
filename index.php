@@ -5,7 +5,7 @@ include "config/conexion.php";
 
 //consulta
 
-$consulta = "SELECT titulo, duracion, fecha_subida FROM videos";
+$consulta = "SELECT id, titulo, duracion, fecha_subida FROM videos";
 $resultado = mysqli_query($conn, $consulta);
 
 
@@ -37,7 +37,6 @@ $resultado = mysqli_query($conn, $consulta);
                                     <thead class="table table-dark">
                                         <tr>
                                             <th>Nombre</th>
-                                            <th>Duracion</th>
                                             <th>Fecha y Hora</th>
                                             <th>opcion</th>   
                                         </tr>
@@ -47,12 +46,12 @@ $resultado = mysqli_query($conn, $consulta);
                                       <?php   while ($row = mysqli_fetch_assoc($resultado)) { ?>
                                         <tr>
                                             <td><?php echo $row['titulo']; ?></td>
-                                            <td><?php echo $row['duracion']; ?></td>
                                             <td><?php echo $row['fecha_subida']; ?></td>
-                                            <td class="text-center">
-                    
-                                               <button class="btn btn-danger center">Eliminar</button>     
-                                         
+                                             <td class="text-center">
+                                              <form action="config/eliminar_videos.php" method="POST">
+                                                    <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                                                    <button type="submit" class="btn btn-danger center">Eliminar</button>
+                                                </form>
                                             </td>
                                            
                                         </tr>
