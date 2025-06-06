@@ -3,6 +3,9 @@
  //conexion
 include "config/conexion.php";
 
+
+
+
 //consulta
 
 $consulta = "SELECT id, titulo, duracion, fecha_subida FROM videos";
@@ -25,7 +28,11 @@ $resultado = mysqli_query($conn, $consulta);
                 <main>
                     <div class="container-fluid px-4">
                       
-                       <h1>visualizacion de video</h1>
+                     <br>
+                     <br>
+                     <br>
+
+                <center>   <video src="videos/WhatsApp Video 2025-02-12 at 9.10.mp4" style="height: 500px;" autoplay></video> </center>  
                         
                     </div>
                 </main>

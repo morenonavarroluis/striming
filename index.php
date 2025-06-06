@@ -2,7 +2,12 @@
  
  //conexion
 include "config/conexion.php";
+session_start();
+if (!isset($_SESSION['username'])) {
+    header("Location: login.php");
+    exit();
 
+}
 //consulta
 
 $consulta = "SELECT id, titulo, duracion, fecha_subida FROM videos";
