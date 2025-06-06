@@ -5,7 +5,9 @@ include "config/conexion.php";
 
 //consulta
 
-$consulta = "SELECT titulo, duracion, fecha_subida FROM videos";
+$consulta = "SELECT us.username, us.password, r.rol FROM users as us
+ INNER JOIN rols as r ON us.id_rol = r.id_rols";
+// Ejecutar la consulta
 $resultado = mysqli_query($conn, $consulta);
 
 
@@ -18,15 +20,15 @@ $resultado = mysqli_query($conn, $consulta);
        <?php
         include "base/navbar.php";
         include "base/sidebar.php";
-        include "modal/regis_modal.php";
+        include "modal/modal_usuario.php";
         ?>
        
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Videos</h1>
+                        <h1 class="mt-4">usuario</h1>
                        
-                       <button class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#exampleModal" style="float: right;">Nuevo Video</button>
+                       <button class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#Modalregistro" style="float: right;">Nuevo Video</button>
                             <br>
                             <br>
 
@@ -36,9 +38,9 @@ $resultado = mysqli_query($conn, $consulta);
                                 <table id="datatablesSimple">
                                     <thead class="table table-dark">
                                         <tr>
-                                            <th>Nombre</th>
-                                            <th>Duracion</th>
-                                            <th>Fecha y Hora</th>
+                                            <th>usuario</th>
+                                            <th>contraseña</th>
+                                            <th>rols</th>
                                             <th>opcion</th>   
                                         </tr>
                                     </thead>
@@ -46,9 +48,9 @@ $resultado = mysqli_query($conn, $consulta);
                                     <tbody>
                                       <?php   while ($row = mysqli_fetch_assoc($resultado)) { ?>
                                         <tr>
-                                            <td><?php echo $row['titulo']; ?></td>
-                                            <td><?php echo $row['duracion']; ?></td>
-                                            <td><?php echo $row['fecha_subida']; ?></td>
+                                            <td><?php echo $row['username']; ?></td>
+                                            <td><?php echo $row['password']; ?></td>
+                                            <td><?php echo $row['rol']; ?></td>
                                             <td class="text-center">
                     
                                                <button class="btn btn-danger center">Eliminar</button>     
