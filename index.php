@@ -57,6 +57,7 @@ $resultado = mysqli_query($conn, $consulta);
                                              <td class="text-center">
                                               <form action="config/eliminar_videos.php" method="POST">
                                                     <input type="hidden" name="id" value="<?php echo $row['video_id']; ?>">
+                                                    <input type="hidden" name="name" value="<?php echo $row['video_name']; ?>">
                                                     <button type="submit" class="btn btn-danger center">Eliminar</button>
                                                 </form>
                                             </td>

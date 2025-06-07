@@ -27,13 +27,22 @@ $resultado = mysqli_query($conn, $consulta);
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                      
-                     <br>
-                     <br>
-                     <br>
+                      <br>
+                      <br>
+                      <br>
+                        <center>
+                        <div class="video-container">
+                            <video id="video-player" controls>
+                               
+                                <source src="<?php echo $row['location']; ?>" type="video/mp4" autopley>
+                                Your browser does not support the video tag.
+                            
+                            </video>
+                        </div>
 
-                <center>   <video src="videos/WhatsApp Video 2025-02-12 at 9.10.mp4" style="height: 500px;" autoplay></video> </center>  
-                        
+                    
+                        <button id="next-button">Siguiente</button>
+                    </center>    
                     </div>
                 </main>
                 <?php include 'base/footer.php'; ?>

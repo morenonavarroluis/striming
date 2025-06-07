@@ -1,8 +1,9 @@
 <?php
 	date_default_timezone_set('America/Caracas');
+	
 	require_once 'conexion.php';
 	
-	$fecha = date("Ymd");
+	$fecha = date("Y-m-d");
 
 
 	if(ISSET($_POST['save'])){
@@ -19,16 +20,55 @@
 				$location = '../videos/'.$name.".".$end;
 				if(move_uploaded_file($file_temp, $location)){
 					mysqli_query($conn, "INSERT INTO `video` VALUES('', '$name', '$location','$fecha')") or die(mysqli_error());
-					echo "<script>alert('Video Uploaded')</script>";
-					echo "<script>window.location = '../index.php'</script>";
+					  echo "
+							<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+							<script language='JavaScript'>
+							document.addEventListener('DOMContentLoaded', function() {
+								Swal.fire({
+									icon: 'success',
+									title: 'Se ha subido el video correctamente',
+									showCancelButton: false,
+									confirmButtonColor: '#3085d6',
+									confirmButtonText: 'OK'
+								}).then(() => {
+									location.assign('../index.php');
+								});
+						});
+							</script>";
 				}
 			}else{
-				echo "<script>alert('Wrong video format')</script>";
-				echo "<script>window.location = '../index.php'</script>";
+				  echo "
+         <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+        <script language='JavaScript'>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                icon: 'error',
+                title: 'El formato no es de video',
+                showCancelButton: false,
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'OK'
+              }).then(() => {
+                location.assign('../index.php');
+              });
+    });
+        </script>";
 			}
 		}else{
-			echo "<script>alert('File too large to upload')</script>";
-			echo "<script>window.location = '../index.php'</script>";
+			  echo "
+         <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+        <script language='JavaScript'>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                icon: 'success',
+                title: 'El video es muy grande',
+                showCancelButton: false,
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'OK'
+              }).then(() => {
+                location.assign('../index.php');
+              });
+    });
+        </script>";
 		}
 	}
 ?>
