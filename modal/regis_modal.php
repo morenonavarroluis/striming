@@ -8,19 +8,20 @@
       </div>
       <div class="modal-body">
         
-      <form action="">
-        <input type="text" class="form-control mb-3" placeholder="Nombre del Video" aria-label="Nombre del Video">
-        <input type="hidden" class="form-control mb-3" placeholder="Duracion del Video" aria-label="Duracion del Video">
-        <input type="file" class="form-control mb-3"  placeholder="Seleccionar Video" aria-label="Seleccionar Video">
+      <form action="config/save_video.php" method="POST" enctype="multipart/form-data">
+       
+       
+        <input type="file"  name="video"  class="form-control mb-3"  placeholder="Seleccionar Video" aria-label="Seleccionar Video">
         <input type="hidden" class="form-control mb-3" placeholder="Fecha y Hora" aria-label="Fecha y Hora">
-      </form>
+      
 
 
 
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-primary">Guardar</button>
+        <button type="submit" name="save" class="btn btn-primary">Guardar</button>
+        </form>
       </div>
     </div>
   </div>

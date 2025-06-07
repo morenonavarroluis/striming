@@ -10,7 +10,7 @@ if (!isset($_SESSION['username'])) {
 }
 //consulta
 
-$consulta = "SELECT id, titulo, duracion, fecha_subida FROM videos";
+$consulta = "SELECT video_id, video_name, location, fecha FROM video";
 $resultado = mysqli_query($conn, $consulta);
 
 
@@ -42,6 +42,7 @@ $resultado = mysqli_query($conn, $consulta);
                                     <thead class="table table-dark">
                                         <tr>
                                             <th>Nombre</th>
+                                             <th>Ruta</th>
                                             <th>Fecha y Hora</th>
                                             <th>opcion</th>   
                                         </tr>
@@ -50,11 +51,12 @@ $resultado = mysqli_query($conn, $consulta);
                                     <tbody>
                                       <?php   while ($row = mysqli_fetch_assoc($resultado)) { ?>
                                         <tr>
-                                            <td><?php echo $row['titulo']; ?></td>
-                                            <td><?php echo $row['fecha_subida']; ?></td>
+                                            <td><?php echo $row['video_name']; ?></td>
+                                            <td><?php echo $row['location']; ?></td>
+                                            <td><?php echo $row['fecha']; ?></td>
                                              <td class="text-center">
                                               <form action="config/eliminar_videos.php" method="POST">
-                                                    <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                                                    <input type="hidden" name="id" value="<?php echo $row['video_id']; ?>">
                                                     <button type="submit" class="btn btn-danger center">Eliminar</button>
                                                 </form>
                                             </td>

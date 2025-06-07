@@ -8,7 +8,7 @@ include "config/conexion.php";
 
 //consulta
 
-$consulta = "SELECT id, titulo, duracion, fecha_subida FROM videos";
+$consulta = "SELECT video_id, video_name, location, fecha FROM video";
 $resultado = mysqli_query($conn, $consulta);
 
 
