@@ -1,13 +1,23 @@
 <?php
  
+include "config/conexion.php";
+
+            session_start();
+
+            if (!isset($_SESSION['username'])) {
+                header("Location: login.php");
+                exit();
+
+            }
+
+
  $id = $_SESSION['id']; 
 
- //conexion
-include "config/conexion.php";
+
 
 //consulta
 
-$consulta = "SELECT us.id ,us.username, us.password, r.rol FROM users as us
+$consulta = "SELECT us.id ,us.username, us.password, r.roles FROM users as us
  INNER JOIN rols as r ON us.id_rol = r.id_rols";
 // Ejecutar la consulta
 $resultado = mysqli_query($conn, $consulta);
@@ -50,7 +60,7 @@ $resultado = mysqli_query($conn, $consulta);
                                       <?php   while ($row = mysqli_fetch_assoc($resultado)) { ?>
                                         <tr>
                                             <td><?php echo $row['username']; ?></td>
-                                            <td><?php echo $row['rol']; ?></td>
+                                            <td><?php echo $row['roles']; ?></td>
                                             <td class="text-center">
                                               <form action="config/eliminar.php" method="POST">
                                                     <input type="hidden" name="id" value="<?php echo $row['id']; ?>">

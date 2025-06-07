@@ -20,6 +20,8 @@ $resultado = mysqli_query($conn, $consulta);
 
 ?>
     <body class="sb-nav-fixed">
+
+
        <?php
         include "base/navbar.php";
         include "base/sidebar.php";
@@ -36,11 +38,11 @@ $resultado = mysqli_query($conn, $consulta);
                             <br>
 
                         <div class="card mb-4">
-                            
+                                       
                             <div class="card-body">
                                 <table id="datatablesSimple">
-                                    <thead class="table table-dark">
-                                        <tr>
+                                    <thead>
+                                        <tr style="color:blue;">
                                             <th>Nombre</th>
                                              <th>Ruta</th>
                                             <th>Fecha y Hora</th>
