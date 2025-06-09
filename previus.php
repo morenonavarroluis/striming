@@ -2,44 +2,31 @@
 // Conexión
 include "config/conexion.php";
 
-$query = mysqli_query($conn, "SELECT * FROM `video` ORDER BY `video_id` ASC") or die(mysqli_error());
+$query = mysqli_query($conn, "SELECT * FROM `video` ORDER BY `video_id` ASC") or die(mysqli_error($conn));
 
 include "base/header.php";
 ?>
 <body class="sb-nav-fixed">
-    <?php
-    include "base/navbar.php";
-    include "base/sidebar.php";
-    include "modal/regis_modal.php";
-    ?>
+   
     
     <div id="layoutSidenav_content">
-        <main>
-            <div class="container-fluid px-4">
-                <div class="col-md-6 well">
-                    <hr style="border-top:1px dotted #ccc;"/>
-                    <br /><br />
-                    <hr style="border-top:3px solid #ccc;"/>
+      <main>
+            <div class="container-fluid"> 
+                <div class="video-container"> 
+                  <video id="videoPlayer" controls>
+                        <source id="videoSource" src="" style="width:150%; height: 500px;">
                     
-                    <div class="col-md-12">
-                        <div class="col-md-8">
-                            <video id="videoPlayer"  height="340" controls>
-                                <source id="videoSource" src="" style="width:100%">
-                                Tu navegador no soporta el elemento de video.
-                            </video>
-                        </div>
-                        <br style="clear:both;"/>
-                        <hr style="border-top:1px groovy #000;"/>
-                        <div>
-                            <button onclick="prevVideo()">Anterior</button>
-                            <button onclick="nextVideo()">Siguiente</button>
-                            <button onclick="togglePlay()">Pausar/Reproducir</button>
-                        </div>
-                    </div>
+                    </video>
                 </div>
+                
+
+                    <div class="controls-container"> <button onclick="prevVideo()">Anterior</button>
+                        <button onclick="nextVideo()">Siguiente</button>
+                        <button onclick="togglePlay()">Pausar/Reproducir</button>
+                    </div>
             </div>
-        </main>
-        <?php include 'base/footer.php'; ?>
+    </main>
+      
     </div>
 </div>
 
