@@ -31,10 +31,11 @@ $resultado = mysqli_query($conn, $consulta);
     <body class="sb-nav-fixed">
        <?php
         include "base/navbar.php";
-        include "base/sidebar.php";
+       
         include "modal/modal_usuario.php";
         ?>
-       
+       <br>
+       <br>
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">

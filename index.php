@@ -33,17 +33,22 @@ include "base/header.php";
         <main>
             <div class="container-fluid px-4">
                 <h1 class="mt-4">Videos</h1>
+
                 <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modalusu" style="float: right;">Nuevo Video</button>
                 <br>
                 <br>
+             <div class="card mb-4">
                 <?php while ($fetch = mysqli_fetch_array($query)) { ?>      
+                
+                    
+                
                     <div class="card w-55 mx-auto" style="width: 50%; margin: 20px;">
                         <video width="100%" height="240" controls>
                             <source src="<?php echo $fetch['location'] ?>">
                         </video>
                           <div class="card-body">
                             <h5 class="card-title"><?php echo $fetch['video_name'] ?></h5>
-                            <form action="config/Eliminar_video_usu.php" method="POST">
+                            <form action="config/eliminar_videos.php" method="POST">
                                 <input type="hidden" name="id" value="<?php echo $fetch['video_id']; ?>">
                                 <input type="hidden" name="name" value="<?php echo $fetch['video_name']; ?>">
                                 <button type="submit" class="btn btn-danger center">Eliminar</button>
@@ -51,8 +56,9 @@ include "base/header.php";
                         </div>
                       
                     </div>
+                    
                 <?php } ?>
-
+            </div>
                
                 <!-- Enlaces de paginación -->
                 <nav aria-label="Page navigation">
@@ -86,3 +92,9 @@ include "base/header.php";
 </html>
 
 
+
+                       
+                                       
+                          
+                    
+                
