@@ -25,7 +25,7 @@ include "base/header.php";
 <body class="sb-nav-fixed">
     <?php
     include "base/navbar.php";
-    include "modal/usuario_regid.php";
+    include "modal/regis_modal.php";
     ?>
     <br>
     <br>
@@ -34,7 +34,7 @@ include "base/header.php";
             <div class="container-fluid px-4">
                 <h1 class="mt-4">Videos</h1>
 
-                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modalusu" style="float: right;">Nuevo Video</button>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" style="float: right;">Nuevo Video</button>
                 <br>
                 <br>
              <div class="card mb-4">
