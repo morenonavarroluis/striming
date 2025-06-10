@@ -1,85 +1,41 @@
 <?php
 // Conexión
 include "config/conexion.php";
-
-$query = mysqli_query($conn, "SELECT * FROM `video` ORDER BY `video_id` ASC") or die(mysqli_error($conn));
-
-include "base/header.php";
 ?>
-<body class="sb-nav-fixed">
-   
-    
-    <div id="layoutSidenav_content">
-      <main>
-            <div class="container-fluid"> 
-                <div class="video-container"> 
-                  <video id="videoPlayer" controls>
-                        <source id="videoSource" src="" style="width:150%; height: 500px;">
-                    
-                    </video>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproductor de Video</title>
+    <!-- Enlace a Bootstrap CSS (puedes usar un CDN o descargar los archivos) -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/nuevo.css">
+</head>
+<body class="bg-light">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 video-container">
+                <h2 class="text-center mb-4">Reproductor de Video</h2>
+                <video id="videoPlayer" controls>
+                    <source id="videoSource" src="" type="video/mp4">
+                    Tu navegador no soporta el elemento de video.
+                </video>
+                <div class="controls-container">
+                    <button onclick="prevVideo()">Anterior</button>
+                    <button onclick="nextVideo()">Siguiente</button>
+                    <button onclick="togglePlay()">Pausar/Reproducir</button>
                 </div>
-                
-
-                    <div class="controls-container"> <button onclick="prevVideo()">Anterior</button>
-                        <button onclick="nextVideo()">Siguiente</button>
-                        <button onclick="togglePlay()">Pausar/Reproducir</button>
-                    </div>
             </div>
-    </main>
-      
+        </div>
     </div>
-</div>
 
-<script>
-    const videos = [];
-    let currentVideoIndex = 0;
+    <!-- Enlace a Bootstrap JS y jQuery (necesarios para algunas funcionalidades de Bootstrap) -->
+     <?php  include "config/videoplayer.php";  ?>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <?php
-    // Generar el array de videos en JavaScript
-    while($fetch = mysqli_fetch_array($query)){
-        echo "videos.push('".$fetch['location']."');";
-    }
-    ?>
-
-    const videoPlayer = document.getElementById('videoPlayer');
-    const videoSource = document.getElementById('videoSource');
-
-    function loadVideo(index) {
-        if (index >= 0 && index < videos.length) {
-            videoSource.src = videos[index];
-            videoPlayer.load();
-            videoPlayer.play();
-            currentVideoIndex = index;
-        }
-    }
-
-    function nextVideo() {
-        if (currentVideoIndex < videos.length - 1) {
-            loadVideo(currentVideoIndex + 1);
-        }
-    }
-
-    function prevVideo() {
-        if (currentVideoIndex > 0) {
-            loadVideo(currentVideoIndex - 1);
-        }
-    }
-
-    function togglePlay() {
-        if (videoPlayer.paused) {
-            videoPlayer.play();
-        } else {
-            videoPlayer.pause();
-        }
-    }
-
-    // Cargar el primer video al inicio
-    loadVideo(currentVideoIndex);
-
-    // Reproducir el siguiente video automáticamente al finalizar
-    videoPlayer.addEventListener('ended', nextVideo);
-</script>
-
-<?php include 'base/scrit.php'; ?>
 </body>
 </html>

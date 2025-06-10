@@ -17,7 +17,7 @@ if (isset($_POST['save'])) {
         $allowed_ext = array('avi', 'flv', 'wmv', 'mov', 'mp4');
 
         if (in_array($file_ext, $allowed_ext)) {
-            $location = 'video/';
+            $location = 'videos/';
             $target_file = $location . $file_name;  // Include the file name in the destination
 
             if (move_uploaded_file($file_temp, $target_file)) {
