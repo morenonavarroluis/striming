@@ -9,6 +9,7 @@
 	if(ISSET($_POST['save'])){
 		$file_name = $_FILES['video']['name'];
 		$file_temp = $_FILES['video']['tmp_name'];
+	
 		$file_size = $_FILES['video']['size'];
 		
 		if($file_size < 50000000){

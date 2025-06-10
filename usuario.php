@@ -1,153 +1,100 @@
 <?php
-// usuario.php
-
+//conexion
+include "config/conexion.php";
 session_start();
-// Simulación de usuario logueado
-$_SESSION['username'] = $_SESSION['username'] ?? 'UsuarioDemo';
+if (!isset($_SESSION['id_rol'])) {
+    header("Location: login.php");
+}
 
+
+// variables de paginación
+$videos_per_page = 4; // Número de vídeos a mostrar por página
+$page = isset($_GET['page']) ? (int)$_GET['page'] : 1; // Current page
+$offset = ($page - 1) * $videos_per_page; // Calculate offset
+
+// Total number of videos
+$total_videos_query = mysqli_query($conn, "SELECT COUNT(*) as total FROM `video`");
+$total_videos = mysqli_fetch_assoc($total_videos_query)['total'];
+$total_pages = ceil($total_videos / $videos_per_page); // Total number of pages
+
+// Obtener vídeos de la página actual
+$query = mysqli_query($conn, "SELECT video_id,video_name, location FROM `video` ORDER BY `video_id` ASC LIMIT $videos_per_page OFFSET $offset");
+
+include "base/header.php";
 ?>
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Dashboard de Usuario</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Google Fonts y Font Awesome para iconos -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Roboto', sans-serif;
-            background: #f4f6f8;
-            color: #222;
-        }
-        .sidebar {
-            width: 220px;
-            background: #22223b;
-            color: #fff;
-            height: 100vh;
-            position: fixed;
-            left: 0; top: 0;
-            display: flex;
-            flex-direction: column;
-            padding-top: 30px;
-        }
-        .sidebar h2 {
-            text-align: center;
-            margin-bottom: 30px;
-            font-weight: 700;
-            letter-spacing: 2px;
-        }
-        .sidebar a {
-            color: #fff;
-            text-decoration: none;
-            padding: 15px 30px;
-            display: flex;
-            align-items: center;
-            transition: background 0.2s;
-            font-size: 1.05em;
-        }
-        .sidebar a:hover, .sidebar a.active {
-            background: #4a4e69;
-        }
-        .sidebar i {
-            margin-right: 15px;
-        }
-        .main-content {
-            margin-left: 220px;
-            padding: 40px 30px;
-        }
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 35px;
-        }
-        .header .user-info {
-            display: flex;
-            align-items: center;
-        }
-        .header .user-info i {
-            margin-right: 10px;
-            color: #4a4e69;
-        }
-        .card-container {
-            display: flex;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-        .card {
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(34,34,59,0.08);
-            padding: 30px 25px;
-            flex: 1 1 220px;
-            min-width: 220px;
-            max-width: 320px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-        .card i {
-            font-size: 2em;
-            margin-bottom: 15px;
-            color: #4a4e69;
-        }
-        .card h3 {
-            margin: 0 0 10px 0;
-            font-size: 1.2em;
-        }
-        .card p {
-            margin: 0;
-            color: #555;
-        }
-        @media (max-width: 800px) {
-            .sidebar { width: 60px; }
-            .sidebar h2 { display: none; }
-            .sidebar a span { display: none; }
-            .main-content { margin-left: 60px; }
-        }
-        @media (max-width: 600px) {
-            .main-content { padding: 20px 5px; }
-            .card-container { flex-direction: column; gap: 15px; }
-        }
-    </style>
-</head>
-<body>
-    <div class="sidebar">
-        <h2>Mi Panel</h2>
-        <a href="#" class="active"><i class="fas fa-home"></i><span>Inicio</span></a>
-        <a href="#"><i class="fas fa-user"></i><span>Perfil</span></a>
-        <a href="#"><i class="fas fa-film"></i><span>Mis Películas</span></a>
-        <a href="#"><i class="fas fa-cog"></i><span>Configuración</span></a>
-        <a href="#"><i class="fas fa-sign-out-alt"></i><span>Salir</span></a>
+<body class="sb-nav-fixed">
+    <?php
+    include "base/navbar2.php";
+    include "modal/registro_usu.php";
+    ?>
+    <br>
+    <br>
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid px-4">
+                <h1 class="mt-4">Videos</h1>
+
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" style="float: right;">Nuevo Video</button>
+                <br>
+                <br>
+             <div class="card mb-4">
+                <?php while ($fetch = mysqli_fetch_array($query)) { ?>      
+                
+                    
+                
+                    <div class="card w-55 mx-auto" style="width: 50%; margin: 20px;">
+                        <video width="100%" height="240" controls>
+                            <source src="<?php echo $fetch['location'] ?>">
+                        </video>
+                          <div class="card-body">
+                            <h5 class="card-title"><?php echo $fetch['video_name'] ?></h5>
+                            <form action="config/eliminar_videos.php" method="POST">
+                                <input type="hidden" name="id" value="<?php echo $fetch['video_id']; ?>">
+                                <input type="hidden" name="name" value="<?php echo $fetch['video_name']; ?>">
+                                <button type="submit" class="btn btn-danger center">Eliminar</button>
+                            </form>
+                        </div>
+                      
+                    </div>
+                    
+                <?php } ?>
+            </div>
+               
+                <!-- Enlaces de paginación -->
+                <nav aria-label="Page navigation">
+                    <ul class="pagination justify-content-center">
+                        <?php if ($page > 1): ?>
+                            <li class="page-item">
+                                <a class="page-link" href="?page=<?php echo $page - 1; ?>">Anterior</a>
+                            </li>
+                        <?php endif; ?>
+
+                        <?php for ($i = 1; $i <= $total_pages; $i++): ?>
+                            <li class="page-item <?php echo ($i == $page) ? 'active' : ''; ?>">
+                                <a class="page-link" href="?page=<?php echo $i; ?>"><?php echo $i; ?></a>
+                            </li>
+                        <?php endfor; ?>
+
+                        <?php if ($page < $total_pages): ?>
+                            <li class="page-item">
+                                <a class="page-link" href="?page=<?php echo $page + 1; ?>">Siguiente</a>
+                            </li>
+                        <?php endif; ?>
+                    </ul>
+                </nav>
+            </div>
+        </main>
+        <?php include 'base/footer.php'; ?>
     </div>
-    <div class="main-content">
-        <div class="header">
-            <h1>Bienvenido, <?php echo htmlspecialchars($_SESSION['username']); ?> 👋</h1>
-            <div class="user-info">
-                <i class="fas fa-user-circle fa-2x"></i>
-                <span><?php echo htmlspecialchars($_SESSION['username']); ?></span>
-            </div>
-        </div>
-        <div class="card-container">
-            <div class="card">
-                <i class="fas fa-film"></i>
-                <h3>Películas vistas</h3>
-                <p>12</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-heart"></i>
-                <h3>Favoritos</h3>
-                <p>5</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-clock"></i>
-                <h3>Última sesión</h3>
-                <p>Hace 2 días</p>
-            </div>
-        </div>
-    </div>
+</div>
+<?php include 'base/scrit.php'; ?>
 </body>
 </html>
+
+
+
+                       
+                                       
+                          
+                    
+                
