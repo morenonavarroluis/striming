@@ -12,7 +12,7 @@
        
        
         <input type="file"  name="video"  class="form-control mb-3"  placeholder="Seleccionar Video" aria-label="Seleccionar Video">
-        <input type="hidden" class="form-control mb-3" placeholder="Fecha y Hora" aria-label="Fecha y Hora">
+        <input type="text" name="name" class="form-control mb-3" placeholder="Nombre" aria-label="Nombre">
       
 
 
