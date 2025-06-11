@@ -12,9 +12,10 @@ include "config/conexion.php";
     <!-- Enlace a Bootstrap CSS (puedes usar un CDN o descargar los archivos) -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="css/nuevo.css">
+<link rel="shortcut icon" href="img/logo.ico" type="image/x-icon">
 </head>
 <body class="fondo">
-    <button class="btn btn-outline-primary m-10">Inicio</button>
+    <a href="login.php" class="btn btn-outline-primary m-10">Inicio</a>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8 video-container">
