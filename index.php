@@ -1,6 +1,6 @@
 <?php
 // Conexión
-include "roles/config/conexion.php";
+include "config/conexion.php";
 ?>
 
 <!DOCTYPE html>
@@ -11,9 +11,10 @@ include "roles/config/conexion.php";
     <title>Reproductor de Video</title>
     <!-- Enlace a Bootstrap CSS (puedes usar un CDN o descargar los archivos) -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<link rel="stylesheet" href="roles/css/nuevo.css">
+<link rel="stylesheet" href="css/nuevo.css">
 </head>
-<body class="bg-light">
+<body class="fondo">
+    <button class="btn btn-outline-primary m-10">Inicio</button>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8 video-container">
@@ -32,7 +33,7 @@ include "roles/config/conexion.php";
     </div>
 
     <!-- Enlace a Bootstrap JS y jQuery (necesarios para algunas funcionalidades de Bootstrap) -->
-     <?php  include "videoplayer.php";  ?>
+     <?php  include "config/videoplayer.php";  ?>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

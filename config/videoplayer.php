@@ -10,7 +10,7 @@
         echo "videos.push('".$fetch['location']."');";
     }
     ?>
-
+    console.log(videos);
     const videoPlayer = document.getElementById('videoPlayer');
     const videoSource = document.getElementById('videoSource');
 
