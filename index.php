@@ -15,7 +15,7 @@ include "config/conexion.php";
 <link rel="shortcut icon" href="img/logo.ico" type="image/x-icon">
 </head>
 <body class="fondo">
-    <a href="login.php" class="btn btn-outline-primary m-10">Inicio</a>
+    <a href="login.php" class="btn btn-outline-primary  lo">Inicio</a>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8 video-container">
@@ -24,11 +24,7 @@ include "config/conexion.php";
                     <source id="videoSource" src="" type="video/mp4">
                     Tu navegador no soporta el elemento de video.
                 </video>
-                <div class="controls-container">
-                    <button onclick="prevVideo()">Anterior</button>
-                    <button onclick="nextVideo()">Siguiente</button>
-                    <button onclick="togglePlay()">Pausar/Reproducir</button>
-                </div>
+              
             </div>
         </div>
     </div>
