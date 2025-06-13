@@ -39,7 +39,7 @@ if (isset($_POST['save'])) {
                             confirmButtonColor: '#3085d6',
                             confirmButtonText: 'OK'
                         }).then(() => {
-                            window.location.href = 'usuario.php';
+                            window.location.href = 'admin.php';
                         });
                     });
                     </script>";
@@ -56,7 +56,7 @@ if (isset($_POST['save'])) {
                             confirmButtonColor: '#3085d6',
                             confirmButtonText: 'OK'
                         }).then(() => {
-                            window.location.href = 'usuario.php';
+                            window.location.href = 'admin.php';
                         });
                     });
                     </script>";
@@ -74,7 +74,7 @@ if (isset($_POST['save'])) {
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK'
                     }).then(() => {
-                        window.location.href = 'usuario.php';
+                        window.location.href = 'admin.php';
                     });
                 });
                 </script>";
@@ -91,7 +91,7 @@ if (isset($_POST['save'])) {
                     confirmButtonColor: '#3085d6',
                     confirmButtonText: 'OK'
                 }).then(() => {
-                    window.location.href = 'usuario.php';
+                    window.location.href = 'admin.php';
                 });
             });
             </script>";
@@ -108,7 +108,7 @@ if (isset($_POST['save'])) {
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK'
             }).then(() => {
-                window.location.href = 'usuario.php';
+                window.location.href = 'admin.php';
             });
         });
         </script>";

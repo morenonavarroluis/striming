@@ -59,7 +59,7 @@ $resultado = mysqli_query($conn, $consulta);
                                    
                                     <tbody>
                                       <?php   while ($row = mysqli_fetch_assoc($resultado)) { ?>
-                                        <tr>
+                                        <tr class="text-center">
                                             <td><?php echo $row['username']; ?></td>
                                             <td><?php echo $row['roles']; ?></td>
                                             <td class="text-center">

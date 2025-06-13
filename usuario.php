@@ -18,7 +18,7 @@ $total_videos = mysqli_fetch_assoc($total_videos_query)['total'];
 $total_pages = ceil($total_videos / $videos_per_page); // Total number of pages
 
 // Obtener vídeos de la página actual
-$query = mysqli_query($conn, "SELECT video_id,video_name, location FROM `video` ORDER BY `video_id` ASC LIMIT $videos_per_page OFFSET $offset");
+$query = mysqli_query($conn, "SELECT video_id,video_name, location FROM `video` ORDER BY `video_id` DESC LIMIT $videos_per_page OFFSET $offset");
 
 include "base/header.php";
 ?>

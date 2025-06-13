@@ -3,11 +3,11 @@
             <a class="navbar-brand  ps-3" href="#">Mercal C.A</a>     
             <!-- Navbar Search-->
              <a class="navbar-brand  ps-2" href="datos_user.php">Usuarios</a>    
-             <a class="navbar-brand  ps-3" href="index.php">Inicio</a>   
+             <a class="navbar-brand  ps-3" href="admin.php">Inicio</a>   
             <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
                 <div class="input-group">
-                    <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
-                    <button class="btn btn-dark" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
+                    <input class="form-control" type="hidden" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+                   
                 </div>
             </form>
             <!-- Navbar-->
