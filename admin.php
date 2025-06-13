@@ -18,7 +18,7 @@ $total_videos = mysqli_fetch_assoc($total_videos_query)['total'];
 $total_pages = ceil($total_videos / $videos_per_page); // Total number of pages
 
 // Obtener vídeos de la página actual
-$query = mysqli_query($conn, "SELECT video_id,video_name, location FROM `video` ORDER BY `video_id` ASC LIMIT $videos_per_page OFFSET $offset");
+$query = mysqli_query($conn, "SELECT video_id,video_name,fecha, location FROM `video` ORDER BY `video_id` ASC LIMIT $videos_per_page OFFSET $offset");
 
 include "base/header.php";
 ?>
@@ -48,6 +48,7 @@ include "base/header.php";
                         </video>
                           <div class="card-body">
                             <h5 class="card-title"><?php echo $fetch['video_name'] ?></h5>
+                          <h5 class="card-title"><?php echo $fetch['fecha']; ?></h5>
                             <form action="config/eliminar_videos.php" method="POST">
                                 <input type="hidden" name="id" value="<?php echo $fetch['video_id']; ?>">
                                 <input type="hidden" name="name" value="<?php echo $fetch['video_name']; ?>">

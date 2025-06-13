@@ -32,7 +32,7 @@ if ($_POST) {
             if (isset($_SESSION['id_rol'])) {
                 switch ($_SESSION['id_rol']) {
                    case 1:
-                        header("Location: ../index.php");
+                        header("Location: ../admin.php");
                         break;
                     case 2:
                         header("Location: ../usuario.php");
@@ -51,7 +51,7 @@ if ($_POST) {
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK'
               }).then(() => {
-                location.assign('../index.php');
+                location.assign('../login.php');
               });
     });
         </script>";
@@ -75,7 +75,7 @@ if ($_POST) {
                         timer: 1500
                       }).then(() => {
 
-                        location.assign('../index.php');
+                        location.assign('../login.php');
 
                       });
             });
@@ -96,7 +96,7 @@ if ($_POST) {
                         timer: 1500
                       }).then(() => {
 
-                        location.assign('../index.php');
+                        location.assign('../login.php');
 
                       });
             });

@@ -3,18 +3,24 @@
         }
 
         .video-container {
-            margin-top: 1px;
+          
             background-color: #fff;
             border-radius: 8px;
             /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);*/
             padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            
         }
 
         #videoPlayer {
             width: 100%;
-            max-height: 500px; /* Ajusta la altura máxima según tus necesidades */
+            max-height: 600px; /* Ajusta la altura máxima según tus necesidades */
             border-radius: 5px;
             border: 0.5px solid blue;
+            box-shadow: 25px 9px 63px #ff4141;
+
         }
 
         .controls-container {
@@ -41,8 +47,13 @@
             text-decoration: none;
         }
 
-        /*.lo{
-            margin: 50px;
-        }*/
+        .boton{
+            width: 150px;
+        }
+
+        .logo{
+            width: 150px;
+
+        }
 
        

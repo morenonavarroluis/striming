@@ -15,17 +15,18 @@ include "config/conexion.php";
 <link rel="shortcut icon" href="img/logo.ico" type="image/x-icon">
 </head>
 <body class="fondo">
-    <a href="login.php" class="btn btn-outline-primary  lo">Inicio</a>
-    <div class="container">
+    
+    <div class="flex-container">
         <div class="row justify-content-center">
-            <div class="col-md-8 video-container">
-                <h2 class="text-center mb-4">Reproductor de Video</h2>
+            <div class="video-container">
+                <img src="img/logo.png" class= "logo" alt="">
                 <video id="videoPlayer" controls>
                     <source id="videoSource" src="" type="video/mp4">
                     Tu navegador no soporta el elemento de video.
                 </video>
-              
+              <a href="login.php" class="btn btn-primary m-auto boton">Inicio</a>
             </div>
+            
         </div>
     </div>
 

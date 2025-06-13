@@ -48,11 +48,8 @@ include "base/header.php";
                         </video>
                           <div class="card-body">
                             <h5 class="card-title"><?php echo $fetch['video_name'] ?></h5>
-                            <form action="config/eliminar_videos.php" method="POST">
-                                <input type="hidden" name="id" value="<?php echo $fetch['video_id']; ?>">
-                                <input type="hidden" name="name" value="<?php echo $fetch['video_name']; ?>">
-                                <button type="submit" class="btn btn-danger center">Eliminar</button>
-                            </form>
+                             <h5 class="card-title"><?php echo $fetch['fecha']; ?></h5>
+                          
                         </div>
                       
                     </div>

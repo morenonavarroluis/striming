@@ -16,7 +16,7 @@
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="img/perfil.png" style="border-radius :200px; height: 50px;" alt=""></i></a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                        
-                        <li><a class="dropdown-item" href="config/logout.php">Logout</a></li>
+                        <li><a class="dropdown-item" href="config/logout.php">Salir</a></li>
                     </ul>
                 </li>
             </ul>
