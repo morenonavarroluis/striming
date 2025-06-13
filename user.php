@@ -33,6 +33,7 @@ $resultado = mysqli_query($conn, $consulta);
         include "base/navbar2.php";
        
         include "modal/modal_rigistrador.php";
+        include "modal/modal_editar.php";
         ?>
        <br>
        <br>
@@ -67,7 +68,7 @@ $resultado = mysqli_query($conn, $consulta);
                                                             <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
                                                             <button type="submit" class="btn btn-danger">Eliminar</button>
                                                         </form>
-                                                        <a class="btn btn-primary" href="">Editar</a>
+                                                        <a  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modaleditar" href="">Editar</a>
                                                     </div>
                                                 </td>
                                             </tr>
