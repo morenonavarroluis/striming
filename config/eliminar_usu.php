@@ -4,7 +4,7 @@
 
         $id = $_POST['id'];
         $name = $_POST['name'];
-        // Consulta para eliminar el admin
+        // Consulta para eliminar el usuario
         $consulta = "DELETE FROM video WHERE `video_id` = '$id'";
 
         if (mysqli_query($conn, $consulta)) {
@@ -25,7 +25,7 @@
                     confirmButtonColor: '#3085d6',
                     confirmButtonText: 'OK'
                 }).then(() => {
-                    window.location.href = '../admin.php';
+                    window.location.href = '../usuario.php';
                 });
             });
             </script>";
@@ -41,7 +41,7 @@
                     confirmButtonColor: '#3085d6',
                     confirmButtonText: 'OK'
                 }).then(() => {
-                    window.location.href = '../admin.php';
+                    window.location.href = '../usuario.php';
                 });
             });
             </script>";
@@ -58,7 +58,7 @@
                     confirmButtonColor: '#3085d6',
                     confirmButtonText: 'OK'
                 }).then(() => {
-                    window.location.href = '../admin.php';
+                    window.location.href = '../usuario.php';
                 });
             });
             </script>";
@@ -75,7 +75,7 @@
                     confirmButtonColor: '#3085d6',
                     confirmButtonText: 'OK'
                 }).then(() => {
-                    window.location.href = '../admin.php';
+                    window.location.href = '../usuario.php';
                 });
             });
             </script>";

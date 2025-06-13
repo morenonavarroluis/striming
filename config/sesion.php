@@ -37,6 +37,12 @@ if ($_POST) {
                     case 2:
                         header("Location: ../usuario.php");
                         break;
+                    case 3:
+                        header("Location: ../consultor.php");
+                        break;
+                    case 4:
+                        header("Location: ../user.php");
+                        break;
             
                     default:
         echo  "

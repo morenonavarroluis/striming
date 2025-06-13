@@ -6,7 +6,7 @@ if (!isset($_SESSION['id_rol'])) {
     header("Location: login.php");
 }
 
-$admin = $_SESSION['username'];
+$usu = $_SESSION['username'];
 
 // variables de paginación
 $videos_per_page = 6; // Número de vídeos a mostrar por página
@@ -19,14 +19,14 @@ $total_videos = mysqli_fetch_assoc($total_videos_query)['total'];
 $total_pages = ceil($total_videos / $videos_per_page); // Total number of pages
 
 // Obtener vídeos de la página actual
-$query = mysqli_query($conn, "SELECT video_id,video_name,fecha, location FROM `video` ORDER BY `video_id` DESC LIMIT $videos_per_page OFFSET $offset");
+$query = mysqli_query($conn, "SELECT video_id,video_name, location FROM `video` ORDER BY `video_id` DESC LIMIT $videos_per_page OFFSET $offset");
 
 include "base/header.php";
 ?>
 <body class="sb-nav-fixed">
     <?php
-    include "base/navbar.php";
-    include "modal/regis_modal.php";
+    include "base/navbar2.php";
+    include "modal/registro_usu.php";
     ?>
     <br>
     <br>
@@ -35,10 +35,10 @@ include "base/header.php";
             <div class="container-fluid px-4">
                 <h1 class="mt-4">Videos</h1>
 
-                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" style="float: right;">Nuevo Video</button>
+              
                 <br>
                 <br>
-            <div class="container">
+              <div class="container">
                 <div class="row">
                     <?php while ($fetch = mysqli_fetch_array($query)) { ?>      
                         <div class="col-md-4 mb-4"> <!-- Cambia w-55 a col-md-4 para tres columnas -->
@@ -49,18 +49,13 @@ include "base/header.php";
                                 <div class="card-body">
                                     <h5 class="card-title"><?php echo $fetch['video_name'] ?></h5>
                                     <h5 class="card-title"><?php echo $fetch['fecha']; ?></h5>
-                                    <form action="config/eliminar_videos.php" method="POST">
-                                        <input type="hidden" name="id" value="<?php echo $fetch['video_id']; ?>">
-                                        <input type="hidden" name="name" value="<?php echo $fetch['video_name']; ?>">
-                                        <button type="submit" class="btn btn-danger">Eliminar</button>
-                                    </form>
                                 </div>
                             </div>
                         </div>
                     <?php } ?>
                 </div>
             </div>
-
+               
                 <!-- Enlaces de paginación -->
                 <nav aria-label="Page navigation">
                     <ul class="pagination justify-content-center">

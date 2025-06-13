@@ -6,9 +6,10 @@ if (!isset($_SESSION['id_rol'])) {
     header("Location: login.php");
 }
 
+$usu = $_SESSION['username'];
 
 // variables de paginación
-$videos_per_page = 4; // Número de vídeos a mostrar por página
+$videos_per_page = 6; // Número de vídeos a mostrar por página
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1; // Current page
 $offset = ($page - 1) * $videos_per_page; // Calculate offset
 
@@ -37,24 +38,27 @@ include "base/header.php";
                 <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" style="float: right;">Nuevo Video</button>
                 <br>
                 <br>
-             <div class="card mb-4">
-                <?php while ($fetch = mysqli_fetch_array($query)) { ?>      
-                
-                    
-                
-                    <div class="card w-55 mx-auto" style="width: 50%; margin: 20px;">
-                        <video width="100%" height="240" controls>
-                            <source src="<?php echo $fetch['location'] ?>">
-                        </video>
-                          <div class="card-body">
-                            <h5 class="card-title"><?php echo $fetch['video_name'] ?></h5>
-                             <h5 class="card-title"><?php echo $fetch['fecha']; ?></h5>
-                          
+              <div class="container">
+                <div class="row">
+                    <?php while ($fetch = mysqli_fetch_array($query)) { ?>      
+                        <div class="col-md-4 mb-4"> <!-- Cambia w-55 a col-md-4 para tres columnas -->
+                            <div class="card">
+                                <video width="100%" height="240" controls>
+                                    <source src="<?php echo $fetch['location'] ?>">
+                                </video>
+                                <div class="card-body">
+                                    <h5 class="card-title"><?php echo $fetch['video_name'] ?></h5>
+                                    <h5 class="card-title"><?php echo $fetch['fecha']; ?></h5>
+                                    <form action="config/eliminar_videos.php" method="POST">
+                                        <input type="hidden" name="id" value="<?php echo $fetch['video_id']; ?>">
+                                        <input type="hidden" name="name" value="<?php echo $fetch['video_name']; ?>">
+                                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
-                      
-                    </div>
-                    
-                <?php } ?>
+                    <?php } ?>
+                </div>
             </div>
                
                 <!-- Enlaces de paginación -->
