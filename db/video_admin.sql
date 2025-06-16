@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-06-2025 a las 10:08:34
+-- Tiempo de generación: 16-06-2025 a las 04:51:18
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -38,7 +38,9 @@ CREATE TABLE `rols` (
 
 INSERT INTO `rols` (`id_rols`, `roles`) VALUES
 (1, 'administrador'),
-(2, 'usuario');
+(2, 'editor'),
+(3, 'consultor'),
+(4, 'create_user');
 
 -- --------------------------------------------------------
 
@@ -59,7 +61,9 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `username`, `password`, `id_rol`) VALUES
 (3, 'admin', '7c4a8d09ca3762af61e59520943dc26494f8941b', 1),
-(4, 'user', '7c4a8d09ca3762af61e59520943dc26494f8941b', 2);
+(4, 'editor', 'f82b3442791c6882fe11339c3dfb00624aa8db33', 2),
+(5, 'lnavarro', '7c4a8d09ca3762af61e59520943dc26494f8941b', 3),
+(6, 'drangel', '7c4a8d09ca3762af61e59520943dc26494f8941b', 4);
 
 -- --------------------------------------------------------
 
@@ -79,26 +83,19 @@ CREATE TABLE `video` (
 --
 
 INSERT INTO `video` (`video_id`, `video_name`, `location`, `fecha`) VALUES
-(1, '202506071749279447', 'videos/202506071749279447.mp4', '2025-06-07'),
-(2, '202506071749280663', 'videos/202506071749280663.mp4', '2025-06-07'),
-(3, '202506071749281697', 'videos/202506071749281697.mp4', '2025-06-07'),
-(4, '202506071749281708', 'videos/202506071749281708.mp4', '2025-06-07'),
-(5, '202506071749281737', 'videos/202506071749281737.mp4', '2025-06-07'),
-(6, '202506071749281746', 'videos/202506071749281746.mp4', '2025-06-07'),
-(7, '202506071749281762', 'videos/202506071749281762.mp4', '2025-06-07'),
-(8, '202506071749281784', 'videos/202506071749281784.mp4', '2025-06-07'),
-(9, '202506071749281796', 'videos/202506071749281796.mp4', '2025-06-07'),
-(10, '202506071749281821', 'videos/202506071749281821.mp4', '2025-06-07'),
-(11, '202506071749281835', 'videos/202506071749281835.mp4', '2025-06-07'),
-(12, '202506071749281848', 'videos/202506071749281848.mp4', '2025-06-07'),
-(13, '202506071749281861', 'videos/202506071749281861.mp4', '2025-06-07'),
-(14, '202506071749281873', 'videos/202506071749281873.mp4', '2025-06-07'),
-(15, '202506071749281886', 'videos/202506071749281886.mp4', '2025-06-07'),
-(16, '202506071749281934', 'videos/202506071749281934.mp4', '2025-06-07'),
-(17, '202506071749282045', 'videos/202506071749282045.mp4', '2025-06-07'),
-(18, '202506071749282059', 'videos/202506071749282059.mp4', '2025-06-07'),
-(19, '202506071749282073', 'videos/202506071749282073.mp4', '2025-06-07'),
-(20, '202506071749282112', 'videos/202506071749282112.mp4', '2025-06-07');
+(1, 'video1', 'videos/202506061749266829.mp4', '2025-06-14'),
+(2, 'video2', 'videos/202506061749266881.mp4', '2025-06-14'),
+(3, 'video3', 'videos/202506071749281697.mp4', '2025-06-14'),
+(4, 'video4', 'videos/202506071749281708.mp4', '2025-06-14'),
+(5, 'video5', 'videos/202506071749281737.mp4', '2025-06-14'),
+(6, 'video6', 'videos/202506071749281746.mp4', '2025-06-14'),
+(7, 'video7', 'videos/202506071749281762.mp4', '2025-06-14'),
+(8, 'video8', 'videos/202506071749281784.mp4', '2025-06-14'),
+(9, 'video9', 'videos/202506071749281796.mp4', '2025-06-14'),
+(10, 'video10', 'videos/202506071749281821.mp4', '2025-06-14'),
+(11, 'video11', 'videos/202506071749281835.mp4', '2025-06-14'),
+(12, 'video12', 'videos/202506071749281848.mp4', '2025-06-14'),
+(13, 'video13', 'videos/WhatsApp Video 2025-03-10 at 11.48.18 AM.mp4', '2025-06-14');
 
 --
 -- Índices para tablas volcadas
@@ -132,19 +129,19 @@ ALTER TABLE `video`
 -- AUTO_INCREMENT de la tabla `rols`
 --
 ALTER TABLE `rols`
-  MODIFY `id_rols` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_rols` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `video`
 --
 ALTER TABLE `video`
-  MODIFY `video_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `video_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Restricciones para tablas volcadas

@@ -11,7 +11,7 @@
                 </div>
             </form>
             <!-- Navbar-->
-             <a style="color:white;  text-decoration: none;" href=""><?php echo $admin; ?></a>
+             <a style="color:white;  text-decoration: none;" href="">administrador</a>
             <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="img/perfil.png" style="border-radius :200px; height: 50px;" alt=""></i></a>

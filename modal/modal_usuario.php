@@ -15,7 +15,9 @@
         <select class="form-select mt-2" aria-label="Default select example" name="rol" required>
           <option selected>Seleccionar rol</option>
           <option value="1">Administrador</option>
-          <option value="2">Usuario</option>
+          <option value="2">Editor</option>
+           <option value="3">Consultor</option>
+            <option value="4">Registrador</option>
         </select>
       
 

@@ -9,7 +9,7 @@ if (!isset($_SESSION['id_rol'])) {
 $admin = $_SESSION['username'];
 
 // variables de paginación
-$videos_per_page = 6; // Número de vídeos a mostrar por página
+$videos_per_page = 8; // Número de vídeos a mostrar por página
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1; // Current page
 $offset = ($page - 1) * $videos_per_page; // Calculate offset
 
@@ -41,7 +41,7 @@ include "base/header.php";
             <div class="container">
                 <div class="row">
                     <?php while ($fetch = mysqli_fetch_array($query)) { ?>      
-                        <div class="col-md-4 mb-4"> <!-- Cambia w-55 a col-md-4 para tres columnas -->
+                        <div class="col-md-3 mb-4"> <!-- Cambia w-55 a col-md-4 para tres columnas -->
                             <div class="card">
                                 <video width="100%" height="240" controls>
                                     <source src="<?php echo $fetch['location'] ?>">
