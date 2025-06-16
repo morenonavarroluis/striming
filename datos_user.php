@@ -62,23 +62,32 @@ $resultado = mysqli_query($conn, $consulta);
                                         <tr class="text-center">
                                             <td><?php echo $row['username']; ?></td>
                                             <td><?php echo $row['roles']; ?></td>
-                                            <td class="text-center">
-                                              <form action="config/eliminar.php" method="POST">
+                                            <td >
+                                               <div class="d-flex justify-content-center"> <!-- Contenedor para centrar los botones -->   
+                                                  <form action="config/eliminar.php" method="POST" class="me-2">
                                                     <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
                                                     <button type="submit" class="btn btn-danger center">Eliminar</button>
-                                                </form>
+                                                  </form>
+                                                 <a  class="btn btn-warning text-white me-2" data-bs-toggle="modal" data-bs-target="#Modaleditar<?php echo $row['id']; ?>" href="">Editar</a>
+                                                        <a  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modaladmin<?php echo $row['id']; ?>" href="">cambiar contraseña</a>
+                                            
+                                                </div>
                                             </td>
                                            
                                         </tr>
                                        
-                                         <?php   } ?>
-                           
+                                         <?php  include "modal/modal_editar_admin.php"; 
+                                                include "modal/modal_contra_admin.php";
+                                          } ?>
+                                          
+                                         
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
                 </main>
+
                 <?php include 'base/footer.php'; ?>
             </div>
         </div>

@@ -8,7 +8,7 @@ include "config/conexion.php";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reproductor de Video</title>
+    <title>MercalStream</title>
     <!-- Enlace a Bootstrap CSS (puedes usar un CDN o descargar los archivos) -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="css/nuevo.css">
@@ -22,7 +22,7 @@ include "config/conexion.php";
                 <img src="img/logo.png" class= "logo" alt="">
                 <video id="videoPlayer" controls>
                     <source id="videoSource" src="" type="video/mp4">
-                    Tu navegador no soporta el elemento de video.
+                    
                 </video>
               <a href="login.php" class="btn btn-primary m-auto boton">Inicio</a>
             </div>

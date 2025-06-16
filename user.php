@@ -64,15 +64,17 @@ $resultado = mysqli_query($conn, $consulta);
                                                 <td><?php echo $row['roles']; ?></td>
                                                 <td>
                                                     <div class="d-flex justify-content-center"> <!-- Contenedor para centrar los botones -->
-                                                        <form action="config/eliminar.php" method="POST" class="me-2"> <!-- Clase me-2 para margen a la derecha -->
+                                                        <form action="config/eliminar_create.php" method="POST" class="me-2"> <!-- Clase me-2 para margen a la derecha -->
                                                             <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
                                                             <button type="submit" class="btn btn-danger">Eliminar</button>
                                                         </form>
-                                                        <a  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modaleditar<?php echo $row['id']; ?>" href="">Editar</a>
+                                                        <a  class="btn btn-warning text-white me-2" data-bs-toggle="modal" data-bs-target="#Modaleditar<?php echo $row['id']; ?>" href="">Editar</a>
+                                                        <a  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modalcontra<?php echo $row['id']; ?>" href="">cambiar contraseña</a>
                                                     </div>
                                                 </td>
                                             </tr>
-                                        <?php    include "modal/modal_editar.php"; } ?>
+                                        <?php    include "modal/modal_editar.php";
+                                                include "modal/modal_contra.php"; } ?>
                                     </tbody>
                                 </table>
 

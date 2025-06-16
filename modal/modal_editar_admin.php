@@ -12,7 +12,7 @@
     
     
        
-        <form action="config/editar.php" method="post">
+        <form action="config/editar_admin.php" method="post">
             
             <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
             
@@ -22,12 +22,13 @@
           
           
            <label for="">Roles</label>
-            <select class="form-select mt-2" aria-label="Default select example" name="rol" required>
-            <option value="<?php echo $row['roles']; ?>" >Seleccione una opción</option>
-            <option value="2">Editor</option>
-            <option value="3">Consultor</option>
-            <option value="4">Registrador</option>
-           </select>
+         <select class="form-select mt-2" aria-label="Default select example" name="rol">
+              <option value="<?php echo $row['roles']; ?>" >Seleccione una opción</option>
+              <option value="2">Editor</option>
+              <option value="3">Consultor</option>
+              <option value="4">Registrador</option>
+          </select>
+
      
 
 
