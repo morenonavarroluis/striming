@@ -1,0 +1,16 @@
+# Habilitar el motor de reescritura
+RewriteEngine On
+
+# Evitar el listado de directorios
+Options -Indexes
+
+# Si la solicitud no es un directorio y existe un archivo .php con ese nombre,
+# redirige a ese archivo .php
+# (Estas reglas están comentadas en tu ejemplo, si las quieres activas, descoméntalas)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [L]
+
+# Configurar las páginas de error personalizadas
+ErrorDocument 404 /striming/404.php
+ErrorDocument 403 /striming/403.php
