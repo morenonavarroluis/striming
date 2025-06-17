@@ -47,17 +47,21 @@ include "base/header.php";
                                     <source src="<?php echo $fetch['location'] ?>">
                                 </video>
                                 <div class="card-body">
-                                    <h5 class="card-title"><?php echo $fetch['video_name'] ?></h5>
-                                    <h5 class="card-title"><?php echo $fetch['fecha']; ?></h5>
-                                    <form action="config/eliminar_videos.php" method="POST">
-                                        <input type="hidden" name="id" value="<?php echo $fetch['video_id']; ?>">
-                                        <input type="hidden" name="name" value="<?php echo $fetch['video_name']; ?>">
-                                        <button type="submit" class="btn btn-danger">Eliminar</button>
-                                    </form>
+                                     
+                                    <h5 class="card-title text-center"><?php echo $fetch['video_name'] ?></h5>
+                                    <h5 class="card-title text-center"><?php echo $fetch['fecha']; ?></h5>
+                                           <div class="d-flex justify-content-center">
+                                            <form action="config/eliminar_videos.php" method="POST" class="me-2">
+                                                <input type="hidden" name="id" value="<?php echo $fetch['video_id']; ?>">
+                                                <input type="hidden" name="name" value="<?php echo $fetch['video_name']; ?>">
+                                                <button type="submit" class="btn btn-danger">Eliminar</button>
+                                            </form>
+                                            <a href="" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#Modalvideo<?php echo $fetch['video_id']; ?>" >Editar</a>
+                                       </div>
                                 </div>
                             </div>
                         </div>
-                    <?php } ?>
+                    <?php include "modal/modal_video.php"; } ?>
                 </div>
             </div>
 

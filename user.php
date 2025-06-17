@@ -50,7 +50,7 @@ $resultado = mysqli_query($conn, $consulta);
                             
                             <div class="card-body">
                          <table id="datatablesSimple" class="table text-center">
-                                    <thead class="table-danger"> <!-- Solo usa una clase para el color -->
+                                    <thead> 
                                         <tr>
                                             <th>Usuario</th>
                                             <th>Roles</th>

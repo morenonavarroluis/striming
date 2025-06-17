@@ -20,7 +20,7 @@
                 <div class="card-body p-md-5 mx-md-4">
 
                   <div class="text-center">
-                    <img src="img/logo.png" class="img-fluid my-4" alt="logo">
+                    <img src="img/logo.png" class="img-fluid" style="height:250px;" alt="logo">
                   </div>
 
                   <form action="./config/sesion.php" method="POST" class="m-auto" style="width: 90%">
@@ -28,12 +28,12 @@
 
                     <div class="form-group mb-4">
                       <i class="fas fa-user form-control-feedback"></i>
-                      <input type="text" name="username" maxlength="8" required class="form-control my-input" placeholder="Usuario">
+                      <input type="text" name="username" maxlength="10" required class="form-control my-input" placeholder="Usuario">
                     </div>
 
                     <div class="form-outline mb-4">
                       <i class="fas fa-lock form-control-feedback"></i>
-                      <input type="password" name="password" required maxlength="8" class="form-control my-input" placeholder="Contraseña">
+                      <input type="password" name="password" required maxlength="10" class="form-control my-input" placeholder="Contraseña">
                     </div>
 
                     <div class="text-center pt-1 mb-5 pb-1">
