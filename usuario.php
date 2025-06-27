@@ -46,7 +46,7 @@ include "base/header.php";
                                 <video width="100%" height="240" controls>
                                     <source src="<?php echo $fetch['location'] ?>">
                                 </video>
-                                <div class="card-body">
+                                <div class="card-body w-150">
                                     <h5 class="card-title text-center"><?php echo $fetch['video_name'] ?></h5>
                                      <div class="d-flex justify-content-center">
                                             <form action="config/eliminar_videos.php" method="POST" class="me-2">

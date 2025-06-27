@@ -7,8 +7,10 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>MercalStream</title>
+          <link href="css/styles.css" rel="stylesheet" />
+          <link rel="stylesheet" href="css/espacio.css">
         <link href="css/style.min.css" rel="stylesheet" />
-        <link href="css/styles.css" rel="stylesheet" />
+        
         <script src="js/all.js" crossorigin="anonymous"></script>
         <link rel="shortcut icon" href="./img/logo.ico" type="image/x-icon">
         <link rel="stylesheet" href="css/nuevo.css">
