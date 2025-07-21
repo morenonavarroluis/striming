@@ -25,7 +25,7 @@ include "base/header.php";
 ?>
 <body class="sb-nav-fixed">
     <?php
-    include "base/navbar2.php";
+    include "base/navbar_consultor.php";
     include "modal/registro_usu.php";
     ?>
     <br>

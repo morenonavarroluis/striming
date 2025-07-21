@@ -30,7 +30,7 @@ $resultado = mysqli_query($conn, $consulta);
 ?>
     <body class="sb-nav-fixed">
        <?php
-        include "base/navbar2.php";
+        include "base/navbar_user.php";
        
         include "modal/modal_rigistrador.php";
         
