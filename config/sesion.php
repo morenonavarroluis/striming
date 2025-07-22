@@ -32,16 +32,16 @@ if ($_POST) {
             if (isset($_SESSION['id_rol'])) {
                 switch ($_SESSION['id_rol']) {
                    case 1:
-                        header("Location: ../admin.php");
+                        header("Location: ../admin");
                         break;
                     case 2:
-                        header("Location: ../usuario.php");
+                        header("Location: ../usuario");
                         break;
                     case 3:
-                        header("Location: ../consultor.php");
+                        header("Location: ../consultor");
                         break;
                     case 4:
-                        header("Location: ../user.php");
+                        header("Location: ../user");
                         break;
             
                     default:

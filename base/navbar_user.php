@@ -2,9 +2,9 @@
             <!-- Navbar Brand-->
             <a class="navbar-brand  ps-3" href="#">Mercal C.A</a>     
             <!-- Navbar Search-->
-            <a class="navbar-brand  ps-3" href="user.php">Inicio</a>  
-            <a class="navbar-brand  ps-2" href="espacio_user.php">Espacio Libre</a>
-            <a class="navbar-brand  ps-2" href="config/logout.php">Salir</a>
+            <a class="navbar-brand  ps-3" href="user">Inicio</a>  
+            <a class="navbar-brand  ps-2" href="espacio_user">Espacio Libre</a>
+            <a class="navbar-brand  ps-2" href="config/logout">Salir</a>
             <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
                 <div class="input-group">
                     <input class="form-control" type="hidden" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
