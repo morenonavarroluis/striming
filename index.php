@@ -24,7 +24,7 @@ include "config/conexion.php";
                     <source id="videoSource" src="" type="video/mp4">
                     
                 </video>
-              <a href="login.php" class="btn btn-primary m-auto boton">Inicio</a>
+              <a href="login" class="btn btn-primary m-auto boton">Inicio</a>
             </div>
             
         </div>

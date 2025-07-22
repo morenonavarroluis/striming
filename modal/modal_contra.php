@@ -12,7 +12,7 @@
     
     
        
-        <form action="config/pass_user.php" method="post">
+        <form action="config/pass_user" method="post">
             
             <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
             

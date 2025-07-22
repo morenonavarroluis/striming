@@ -22,7 +22,7 @@ $fecha = $_POST['fecha'];
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK'
               }).then(() => {
-                location.assign('../admin.php');
+                location.assign('../admin');
               });
     });
         </script>";
@@ -40,7 +40,7 @@ $fecha = $_POST['fecha'];
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK'
               }).then(() => {
-                location.assign('../admin.php');
+                location.assign('../admin');
               });
     });
         </script>";

@@ -25,7 +25,7 @@
                     confirmButtonColor: '#3085d6',
                     confirmButtonText: 'OK'
                 }).then(() => {
-                    window.location.href = '../usuario.php';
+                    window.location.href = '../usuario';
                 });
             });
             </script>";
@@ -41,7 +41,7 @@
                     confirmButtonColor: '#3085d6',
                     confirmButtonText: 'OK'
                 }).then(() => {
-                    window.location.href = '../usuario.php';
+                    window.location.href = '../usuario';
                 });
             });
             </script>";
@@ -58,7 +58,7 @@
                     confirmButtonColor: '#3085d6',
                     confirmButtonText: 'OK'
                 }).then(() => {
-                    window.location.href = '../usuario.php';
+                    window.location.href = '../usuario';
                 });
             });
             </script>";
@@ -75,7 +75,7 @@
                     confirmButtonColor: '#3085d6',
                     confirmButtonText: 'OK'
                 }).then(() => {
-                    window.location.href = '../usuario.php';
+                    window.location.href = '../usuario';
                 });
             });
             </script>";

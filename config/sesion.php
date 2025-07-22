@@ -57,7 +57,7 @@ if ($_POST) {
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK'
               }).then(() => {
-                location.assign('../login.php');
+                location.assign('../login');
               });
     });
         </script>";
@@ -81,7 +81,7 @@ if ($_POST) {
                         timer: 1500
                       }).then(() => {
 
-                        location.assign('../login.php');
+                        location.assign('../login');
 
                       });
             });
@@ -102,7 +102,7 @@ if ($_POST) {
                         timer: 1500
                       }).then(() => {
 
-                        location.assign('../login.php');
+                        location.assign('../login');
 
                       });
             });

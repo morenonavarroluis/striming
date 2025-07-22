@@ -1,5 +1,5 @@
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-primary">
-             <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+             <ul class="navbar-nav ms-auto ms-md-3 me-3 me-lg-4">
                 <li class="nav-item dropdown">
                    
                     <a  id="navbarDropdown" href="#"  aria-expanded="false"><img src="img/perf.png" style="border-radius :200px; height: 50px;" alt=""></i></a>
@@ -9,7 +9,7 @@
                     </ul>
                 </li>
             </ul>
-                <div class="navbar-brand ps-3">Registrador</div>
+                <div class="navbar-brand ps-3">Seguridad</div>
             <a class="navbar-brand  ps-3" href="user">Inicio</a>  
             <a class="navbar-brand  ps-2" href="espacio_user">Espacio Libre</a>
             <a class="navbar-brand  ps-2" href="config/logout">Salir</a>

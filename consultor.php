@@ -41,16 +41,16 @@ include "base/header.php";
               <div class="container">
                 <div class="row">
                     <?php while ($fetch = mysqli_fetch_array($query)) { ?>      
-                        <div class="col-md-3 mb-4"> <!-- Cambia w-55 a col-md-4 para tres columnas -->
-                            <div class="card">
-                                <video width="100%" height="240" controls>
+                           <div class="card" style="width: 21rem; margin: 5px;">
+                               <video width="100%" height="240" controls>
                                     <source src="<?php echo $fetch['location'] ?>">
                                 </video>
-                                <div class="card-body">
-                                    <h5 class="card-title"><?php echo $fetch['video_name'] ?></h5>
-                                    <h5 class="card-title"><?php echo $fetch['fecha']; ?></h5>
-                                </div>
-                            </div>
+                              
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item text-center"><?php echo $fetch['video_name'] . ' - ' . $fetch['fecha']; ?></li>
+                                    
+                                </ul>
+                               
                         </div>
                     <?php } ?>
                 </div>

@@ -1,5 +1,5 @@
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-primary">
-            <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+            <ul class="navbar-nav ms-auto ms-md-3 me-3 me-lg-4">
                 <li class="nav-item dropdown">
                    
                     <a  id="navbarDropdown" href="#"  aria-expanded="false"><img src="img/perf.png" style="border-radius :200px; height: 50px;" alt=""></i></a>

@@ -8,7 +8,7 @@
       </div>
       <div class="modal-body">
         
-      <form action="save_video_usuario.php" method="POST" enctype="multipart/form-data">
+      <form action="save_video_usuario" method="POST" enctype="multipart/form-data">
        
        
         <input type="file"  name="video"  class="form-control mb-3"  placeholder="Seleccionar Video" aria-label="Seleccionar Video">

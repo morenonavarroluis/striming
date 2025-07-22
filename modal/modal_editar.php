@@ -12,7 +12,7 @@
     
     
        
-        <form action="config/editar.php" method="post">
+        <form action="config/editar" method="post">
             
             <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
             
@@ -26,7 +26,7 @@
             <option value="<?php echo $row['roles']; ?>" >Seleccione una opción</option>
             <option value="2">Editor</option>
             <option value="3">Consultor</option>
-            <option value="4">Registrador</option>
+            <option value="4">Seguridad</option>
            </select>
      
 

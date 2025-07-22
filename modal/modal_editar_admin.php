@@ -12,7 +12,7 @@
     
     
        
-        <form action="config/editar_admin.php" method="post">
+        <form action="config/editar_admin" method="post">
             
             <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
             

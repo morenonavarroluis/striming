@@ -27,7 +27,7 @@ if($resultado) {
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK'
               }).then(() => {
-                location.assign('../user.php');
+                location.assign('../user');
               });
     });
         </script>";
@@ -45,7 +45,7 @@ if($resultado) {
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK'
               }).then(() => {
-                location.assign('../user.php');
+                location.assign('../user');
               });
     });
         </script>";

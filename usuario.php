@@ -19,7 +19,7 @@ $total_videos = mysqli_fetch_assoc($total_videos_query)['total'];
 $total_pages = ceil($total_videos / $videos_per_page); // Total number of pages
 
 // Obtener vídeos de la página actual
-$query = mysqli_query($conn, "SELECT video_id,video_name, location FROM `video` ORDER BY `video_id` DESC LIMIT $videos_per_page OFFSET $offset");
+$query = mysqli_query($conn, "SELECT video_id,video_name, location, fecha FROM `video` ORDER BY `video_id` DESC LIMIT $videos_per_page OFFSET $offset");
 
 include "base/header.php";
 ?>
@@ -41,23 +41,24 @@ include "base/header.php";
               <div class="container">
                 <div class="row">
                     <?php while ($fetch = mysqli_fetch_array($query)) { ?>      
-                        <div class="col-md-3 mb-4"> <!-- Cambia w-55 a col-md-4 para tres columnas -->
-                            <div class="card">
-                                <video width="100%" height="240" controls>
+                        <div class="card" style="width: 21rem; margin: 5px;">
+                               <video width="100%" height="240" controls>
                                     <source src="<?php echo $fetch['location'] ?>">
                                 </video>
-                                <div class="card-body w-150">
-                                    <h5 class="card-title text-center"><?php echo $fetch['video_name'] ?></h5>
-                                     <div class="d-flex justify-content-center">
-                                            <form action="config/eliminar_videos.php" method="POST" class="me-2">
-                                                <input type="hidden" name="id" value="<?php echo $fetch['video_id']; ?>">
-                                                <input type="hidden" name="name" value="<?php echo $fetch['video_name']; ?>">
-                                                <button type="submit" class="btn btn-danger">Eliminar</button>
-                                            </form>
-                                            <a  class="btn btn-warning text-white me-2" data-bs-toggle="modal" data-bs-target="#Modaleditor<?php echo $fetch['video_id']; ?>" href="">Editar</a>
-                                       </div>
-                                    </div>
-                            </div>
+                              
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item text-center"><?php echo $fetch['video_name'] . ' - ' . $fetch['fecha']; ?></li>
+                                    
+                                </ul>
+                                <div class="card-body d-flex justify-content-center">
+                                <a href="" class="btn btn-warning me-2" data-bs-toggle="modal" data-bs-target="#Modaleditor<?php echo $fetch['video_id']; ?>" >Editar</a>
+                                <form action="config/eliminar_video" method="POST" class="me-2">
+                                    <input type="hidden" name="id" value="<?php echo $fetch['video_id']; ?>">
+                                    <input type="hidden" name="name" value="<?php echo $fetch['video_name']; ?>">
+                                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                                </form>
+                                  
+                                </div>
                         </div>
                     <?php include "modal/modal_editor.php"; } ?>
                 </div>

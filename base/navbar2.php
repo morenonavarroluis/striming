@@ -1,6 +1,6 @@
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-primary">
               <!-- User Profile Dropdown -->
-                    <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+                    <ul class="navbar-nav ms-auto ms-md-3 me-3 me-lg-4">
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
                                 <img src="img/perf.png" style="border-radius: 200px; height: 50px;" alt="">
@@ -11,6 +11,7 @@
             <!-- Navbar Search-->
             <a class="navbar-brand  ps-3" href="usuario">Inicio</a>  
             <a class="navbar-brand  ps-2" href="espacio_editor">Espacio Libre</a>
+            <a class="navbar-brand  ps-2" href="cambio_pass_editor">Cambiar contraseña</a>
             <a class="navbar-brand  ps-2" href="config/logout">Salir</a>
             <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
                 <div class="input-group">

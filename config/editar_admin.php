@@ -19,7 +19,7 @@ if ($rol) {
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK'
               }).then(() => {
-                location.assign('../datos_user.php');
+                location.assign('../datos_user');
               });
     });
         </script>";
@@ -37,7 +37,7 @@ if ($rol) {
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK'
               }).then(() => {
-                location.assign('../datos_user.php');
+                location.assign('../datos_user');
               });
     });
         </script>";
@@ -63,7 +63,7 @@ if ($rol) {
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK'
               }).then(() => {
-                location.assign('../datos_user.php');
+                location.assign('../datos_user');
               });
     });
         </script>";
@@ -81,7 +81,7 @@ if ($rol) {
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK'
               }).then(() => {
-                location.assign('../datos_user.php');
+                location.assign('../datos_user');
               });
     });
         </script>";

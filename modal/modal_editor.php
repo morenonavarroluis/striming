@@ -12,7 +12,7 @@
     
     
        
-        <form action="config/editor_video.php" method="post">
+        <form action="config/editor_video" method="post">
             
             <input type="hidden" name="id" value="<?php echo $fetch['video_id']; ?>">
             

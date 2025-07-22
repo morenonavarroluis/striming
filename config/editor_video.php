@@ -21,7 +21,7 @@ $name = $_POST['name'];
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK'
               }).then(() => {
-                location.assign('../usuario.php');
+                location.assign('../usuario');
               });
     });
         </script>";
@@ -39,7 +39,7 @@ $name = $_POST['name'];
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK'
               }).then(() => {
-                location.assign('../usuario.php');
+                location.assign('../usuario');
               });
     });
         </script>";

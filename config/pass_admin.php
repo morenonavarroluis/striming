@@ -24,7 +24,7 @@ $pass_c = sha1($password);
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK'
               }).then(() => {
-                location.assign('../user.php');
+                location.assign('../user');
               });
     });
         </script>";
@@ -42,7 +42,7 @@ $pass_c = sha1($password);
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK'
               }).then(() => {
-                location.assign('../user.php');
+                location.assign('../user');
               });
     });
         </script>";

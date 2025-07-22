@@ -9,7 +9,7 @@
       <div class="modal-body">
         
     
-      <form action="config/registroUsuario.php" method="POST">
+      <form action="config/registroUsuario" method="POST">
         <input type="text" class="form-control" placeholder="Nombre de usuario" aria-label="Username" aria-describedby="basic-addon1" name="username" required>
         <input type="password" class="form-control mt-2" placeholder="Contraseña" aria-label="Password" aria-describedby="basic-addon1" name="password" required>
         <select class="form-select mt-2" aria-label="Default select example" name="rol" required>

@@ -1,12 +1,16 @@
-<footer class="py-4 bg-light mt-auto">
-                    <div class="container-fluid px-4">
-                        <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Mercal C.A</div>
-                            <div>
-                                <a href="#">Derechos reservados</a>
-                                &middot;
-                                <a href="#">C.A &amp; Mercal</a>
-                            </div>
-                        </div>
-                    </div>
-</footer>
+<div class="d-flex flex-column min-vh-100">
+    <div class="flex-grow-1"></div>
+
+    <footer class="py-4 bg-light mt-auto">
+        <div class="container-fluid px-4">
+            <div class="d-flex align-items-center justify-content-between small">
+                <div class="text-muted">Copyright &copy; Mercal C.A</div>
+                <div>
+                    <a href="#">Derechos reservados</a>
+                    &middot;
+                    <a href="#">C.A &amp; Mercal</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
