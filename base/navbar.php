@@ -10,9 +10,9 @@
 <!-- Navbar Brand-->
             
             <!-- Navbar Search-->
-             <a class="navbar-brand  ps-3" href="admin.php">Inicio</a>   
-             <a class="navbar-brand  ps-2" href="datos_user.php">Usuarios</a>    
-            <a class="navbar-brand  ps-2" href="espacio_admin.php">Espacio Libre</a>
+             <a class="navbar-brand  ps-3" href="admin">Inicio</a>   
+             <a class="navbar-brand  ps-2" href="datos_user">Usuarios</a>    
+            <a class="navbar-brand  ps-2" href="espacio_admin">Espacio Libre</a>
             <a class="navbar-brand  ps-2" href="config/logout.php">Salir</a>
             <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
                 <div class="input-group">

@@ -37,7 +37,7 @@
             </div>
         </div>
         <?php
-            include "base/script.js";
+            include "base/scrit.php";
         ?>
     </body>
 </html>
