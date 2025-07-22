@@ -1,7 +1,15 @@
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-primary">
-            <!-- Navbar Brand-->
-            <a class="navbar-brand  ps-3" href="#">Mercal C.A</a>     
-            <!-- Navbar Search-->
+             <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+                <li class="nav-item dropdown">
+                   
+                    <a  id="navbarDropdown" href="#"  aria-expanded="false"><img src="img/perf.png" style="border-radius :200px; height: 50px;" alt=""></i></a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                       
+                        <li><a class="dropdown-item" href="config/logout.php">Salir</a></li>
+                    </ul>
+                </li>
+            </ul>
+                <div class="navbar-brand ps-3">Registrador</div>
             <a class="navbar-brand  ps-3" href="user">Inicio</a>  
             <a class="navbar-brand  ps-2" href="espacio_user">Espacio Libre</a>
             <a class="navbar-brand  ps-2" href="config/logout">Salir</a>
@@ -12,15 +20,6 @@
                 </div>
             </form>
             <!-- Navbar-->
-              <a style="color:white;"><?php echo $usu; ?></a>
-            <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
-                <li class="nav-item dropdown">
-                   
-                    <a  id="navbarDropdown" href="#"  aria-expanded="false"><img src="img/perf.png" style="border-radius :200px; height: 50px;" alt=""></i></a>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                       
-                        <li><a class="dropdown-item" href="config/logout.php">Salir</a></li>
-                    </ul>
-                </li>
-            </ul>
+              
+           
 </nav>
