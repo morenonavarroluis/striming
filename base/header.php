@@ -1,17 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>MercalStream</title>
-          <link href="css/styles.css" rel="stylesheet" />
-          <link rel="stylesheet" href="css/espacio.css">
-        <link href="css/style.min.css" rel="stylesheet" />
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MercalStream</title>
+    <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="css/nuevo.css">
+    <link href="estilos/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- <link href="css/styles.css" rel="stylesheet" /> -->
+  </head>
+
+
+
+
+
+
+
         
-        <script src="js/all.js" crossorigin="anonymous"></script>
-        <link rel="shortcut icon" href="./img/logo.ico" type="image/x-icon">
-        <link rel="stylesheet" href="css/nuevo.css">
-    </head>
+          
+          
+       

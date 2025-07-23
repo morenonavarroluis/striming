@@ -56,3 +56,45 @@
 
         }
 
+
+              .navbar-brand {
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+        .nav-link {
+            font-weight: 500;
+            padding: 0.5rem 1rem !important;
+            transition: all 0.3s ease;
+        }
+        .nav-link:hover {
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 4px;
+        }
+        .dropdown-menu {
+            border: none;
+            box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
+        }
+        .profile-img {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+        }
+        .search-btn {
+            border-left: none;
+        }
+        .navbar-toggler {
+            border: none;
+        }
+        @media (max-width: 992px) {
+            .navbar-collapse {
+                padding-top: 1rem;
+            }
+            .nav-item {
+                margin-bottom: 0.5rem;
+            }
+            .search-form {
+                margin: 1rem 0;
+                width: 100%;
+            }
+        }
+
