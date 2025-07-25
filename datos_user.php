@@ -38,59 +38,72 @@ $resultado = mysqli_query($conn, $consulta);
        <br>
             <div id="layoutSidenav_content">
                 <main>
-                    <div class="container-fluid px-4">
-                        <h1 class="mt-4">usuario</h1>
+                    
                        
-                       <button class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#Modalregistro" style="float: right;">Nuevo Usuario</button>
+                       <button class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#Modalregistro" style="float: right; margin:0px 30px 0px 0px;">Nuevo Usuario</button>
                             <br>
                             <br>
+    <div class="conta">
+        <h2>Usuarios</h2>
 
-                        <div class="card mb-4">
-                            
-                            <div class="card-body">
-                                <table id="datatablesSimple">
-                                    <thead class="table table-dark">
-                                        <tr>
-                                            <th>usuario</th>
-                                            <th>rols</th>
-                                            <th>opcion</th>   
-                                        </tr>
-                                    </thead>
-                                   
-                                    <tbody>
-                                      <?php   while ($row = mysqli_fetch_assoc($resultado)) { ?>
-                                        <tr class="text-center">
-                                            <td><?php echo $row['username']; ?></td>
-                                            <td><?php echo $row['roles']; ?></td>
-                                            <td >
-                                               <div class="d-flex justify-content-center"> <!-- Contenedor para centrar los botones -->   
-                                                  <form action="config/eliminar.php" method="POST" class="me-2">
-                                                    <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
-                                                    <button type="submit" class="btn btn-danger center">Eliminar</button>
-                                                  </form>
-                                                 <a  class="btn btn-warning text-white me-2" data-bs-toggle="modal" data-bs-target="#Modaleditar<?php echo $row['id']; ?>" href="">Editar</a>
-                                                        <a  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modaladmin<?php echo $row['id']; ?>" href="">cambiar contraseña</a>
-                                            
-                                                </div>
-                                            </td>
-                                           
-                                        </tr>
-                                       
-                                         <?php  include "modal/modal_editar_admin.php"; 
-                                                include "modal/modal_contra_admin.php";
-                                          } ?>
+        <div class="controls">
+            <input type="text" id="searchInput" placeholder="Buscar productos...">
+            <select id="rowsPerPage">
+                <option value="5">5 por página</option>
+                <option value="10">10 por página</option>
+                <option value="20">20 por página</option>
+            </select>
+        </div>
+
+                <table id="myTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Usuario</th>
+                        <th>roles</th>
+                        <th  class="d-flex justify-content-center">accion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php   while ($row = mysqli_fetch_assoc($resultado)) { ?>
+                    <tr>
+                        <td>1</td>
+                        <td><?php echo $row['username']; ?></td>
+                        <td><?php echo $row['roles']; ?></td>
+                        <td class="d-flex justify-content-center">
+                            <button class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#Modaleditar<?php echo $row['id']; ?>">Editar</button>
+                            <button class="btn btn-success me-2" data-bs-toggle="modal" data-bs-target="#Modaladmin<?php echo $row['id']; ?>">cambiar contraseña</button>
+                            <form action="config/eliminar" method="POST" class="me-2">
+                               <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                               <button class="btn btn-danger" type="submit">Eliminar</button>
+                            </form>
+                        </td>
+                    </tr>
+                    <?php  
+                           include "modal/modal_editar_admin.php"; 
+                           include "modal/modal_contra_admin.php";
+                    } ?>
                                           
-                                         
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
+                    </tbody>
+            </table>
+
+        <div class="pagination">
+            <button id="prevBtn">Anterior</button>
+            <span id="pageNumbers"></span>
+            <button id="nextBtn">Siguiente</button>
+        </div>
+    </div>
+                        
+                    
                 </main>
 
-                <?php include 'base/footer.php'; ?>
+                <?php include 'base/footer.php';
+                include 'base/scrit.php';
+                
+                ?>
             </div>
         </div>
-     <?php include 'base/scrit.php'; ?>
+
+     <script src="js/tablas.js"> </script>
     </body>
 </html>

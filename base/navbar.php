@@ -34,7 +34,7 @@
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="https://placehold.co/40x40" alt="Imagen de perfil del usuario" class="rounded-circle profile-img me-1">
+                            <img src="img/perf.png" alt="Imagen de perfil del usuario" class="rounded-circle profile-img me-1">
                             <span class="d-none d-lg-inline">Usuario</span>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">

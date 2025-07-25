@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panel Administrativo</title>
+    <title>MercalStream</title>
     <!-- Bootstrap CSS -->
      <link rel="stylesheet" href="css/nuevo.css">
     <link href="estilos/css/bootstrap.min.css" rel="stylesheet">

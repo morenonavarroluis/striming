@@ -31,17 +31,18 @@ include "base/header.php";
     <br>
     <br>
     <div id="layoutSidenav_content">
-        <main>
+     
+    <main>
+             
             <div class="container-fluid px-4">
-                <h1 class="mt-4">Videos</h1>
-
-                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" style="float: right;">Nuevo Video</button>
+                <h3 class="mt-4">MercalStream-videos</h3>   
+              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" style="float: right;">Nuevo Video</button>
                 <br>
                 <br>
             <div class="container">
                 <div class="row">
                     <?php while ($fetch = mysqli_fetch_array($query)) { ?>      
-                        <div class="card" style="width: 21rem; margin: 5px;">
+                        <div class="card" style="width: 18rem; margin: 5px;">
                                <video width="100%" height="240" controls>
                                     <source src="<?php echo $fetch['location'] ?>">
                                 </video>
