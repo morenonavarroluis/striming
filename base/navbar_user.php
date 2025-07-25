@@ -21,7 +21,7 @@
                         <a class="nav-link" href="espacio_user"><i class="fas fa-map-marker-alt me-1"></i> Espacio Libre</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="cambio_pass_admin"><i class="fas fa-key me-1"></i> Cambiar contraseña</a>
+                        <a class="nav-link" href="cambio_pass_user"><i class="fas fa-key me-1"></i> Cambiar contraseña</a>
                     </li>
                 </ul>
                 

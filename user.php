@@ -39,49 +39,59 @@ $resultado = mysqli_query($conn, $consulta);
        <br>
             <div id="layoutSidenav_content">
                 <main>
-                    <div class="container-fluid px-4">
-                        <h1 class="mt-4">usuario</h1>
-                       
-                       <button class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#Modalregis" style="float: right;">Nuevo Usuario</button>
-                            <br>
-                            <br>
+                   <div class="conta">
+       <div style="display: flex; align-items: center; gap: 550px;">
+  <h2>Usuarios</h2>
+  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modalregis">Nuevo Usuario</button>
+</div>
 
-                        <div class="card mb-4">
-                            
-                            <div class="card-body">
-                         <table id="datatablesSimple" class="table text-center">
-                                    <thead> 
-                                        <tr>
-                                            <th>Usuario</th>
-                                            <th>Roles</th>
-                                            <th>Opción</th>   
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php while ($row = mysqli_fetch_assoc($resultado)) { ?>
-                                            <tr>
-                                                <td><?php echo $row['username']; ?></td>
-                                                <td><?php echo $row['roles']; ?></td>
-                                                <td>
-                                                    <div class="d-flex justify-content-center"> <!-- Contenedor para centrar los botones -->
-                                                        <form action="config/eliminar_create.php" method="POST" class="me-2"> <!-- Clase me-2 para margen a la derecha -->
-                                                            <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
-                                                            <button type="submit" class="btn btn-danger">Eliminar</button>
-                                                        </form>
-                                                        <a  class="btn btn-warning text-white me-2" data-bs-toggle="modal" data-bs-target="#Modaleditar<?php echo $row['id']; ?>" href="">Editar</a>
-                                                        <a  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modalcontra<?php echo $row['id']; ?>" href="">cambiar contraseña</a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        <?php    include "modal/modal_editar.php";
-                                                include "modal/modal_contra.php"; } ?>
-                                    </tbody>
-                                </table>
+        <div class="controls">
+            <input type="text" id="searchInput" placeholder="Buscar productos...">
+            <select id="rowsPerPage">
+                <option value="5">5 por página</option>
+                <option value="10">10 por página</option>
+                <option value="20">20 por página</option>
+            </select>
+        </div>
 
+                <table id="myTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Usuario</th>
+                        <th>roles</th>
+                        <th  class="d-flex justify-content-center">accion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php   while ($row = mysqli_fetch_assoc($resultado)) { ?>
+                    <tr>
+                        <td>1</td>
+                        <td><?php echo $row['username']; ?></td>
+                        <td><?php echo $row['roles']; ?></td>
+                        <td class="d-flex justify-content-center">
+                            <button class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#Modaleditar<?php echo $row['id']; ?>">Editar</button>
+                            <button class="btn btn-success me-2" data-bs-toggle="modal" data-bs-target="#Modalcontra<?php echo $row['id']; ?>">cambiar contraseña</button>
+                            <form action="config/eliminar" method="POST" class="me-2">
+                               <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                               <button class="btn btn-danger" type="submit">Eliminar</button>
+                            </form>
+                        </td>
+                    </tr>
+                    <?php  
+                           include "modal/modal_editar.php"; 
+                           include "modal/modal_contra.php";
+                    } ?>
+                                          
+                    </tbody>
+            </table>
 
-                            </div>
-                        </div>
-                    </div>
+        <div class="pagination">
+            <button id="prevBtn">Anterior</button>
+            <span id="pageNumbers"></span>
+            <button id="nextBtn">Siguiente</button>
+        </div>
+    </div>
                 </main>
                 <?php
              
@@ -89,5 +99,6 @@ $resultado = mysqli_query($conn, $consulta);
             </div>
         </div>
      <?php include 'base/scrit.php'; ?>
+      <script src="js/tablas.js"> </script>
     </body>
 </html>
