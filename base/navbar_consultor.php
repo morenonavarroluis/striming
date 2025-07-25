@@ -1,24 +1,47 @@
-<nav class="sb-topnav navbar navbar-expand navbar-dark bg-primary">
-            <ul class="navbar-nav ms-auto ms-md-3 me-3 me-lg-4">
-                <li class="nav-item dropdown">
-                   
-                    <a  id="navbarDropdown" href="#"  aria-expanded="false"><img src="img/perf.png" style="border-radius :200px; height: 50px;" alt=""></i></a>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                       
-                        <li><a class="dropdown-item" href="config/logout.php">Salir</a></li>
-                    </ul>
-                </li>
-            </ul>
-              <div class="navbar-brand ps-3">Consultor</div>
-            <a class="navbar-brand  ps-3" href="consultor">Inicio</a>  
-            <a class="navbar-brand  ps-2" href="espacio_con">Espacio Libre</a>
-            <a class="navbar-brand  ps-2" href="config/logout">Salir</a>
-            <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
-                <div class="input-group">
-                    <input class="form-control" type="hidden" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
-                   
-                </div>
-            </form>
-          
-           
-</nav>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <!-- Logo y nombre -->
+            <a class="navbar-brand me-2" href="#">
+                <i class="fas fa-user-shield me-2"></i>Consultar
+            </a>
+            
+            <!-- Botón hamburguesa -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Contenido colapsable -->
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <!-- Menú principal -->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="consultor"><i class="fas fa-home me-1"></i> Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="espacio_con"><i class="fas fa-map-marker-alt me-1"></i> Espacio Libre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cambio_pass_con"><i class="fas fa-key me-1"></i> Cambiar contraseña</a>
+                    </li>
+                </ul>
+                
+
+                
+                <!-- Menú usuario -->
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="img/perf.png" alt="Imagen de perfil del usuario" class="rounded-circle profile-img me-1">
+                            <span class="d-none d-lg-inline">Usuario</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-user-circle me-2"></i> Perfil</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i> Configuración</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-danger" href="config/logout"><i class="fas fa-sign-out-alt me-2"></i> Salir</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>

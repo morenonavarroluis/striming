@@ -32,16 +32,10 @@ include "base/header.php";
     <br>
     <div id="layoutSidenav_content">
         <main>
-            <div class="container-fluid px-4">
-                <h1 class="mt-4">Videos</h1>
-
-              
-                <br>
-                <br>
-              <div class="container">
+            <div class="container">
                 <div class="row">
                     <?php while ($fetch = mysqli_fetch_array($query)) { ?>      
-                           <div class="card" style="width: 21rem; margin: 5px;">
+                        <div class="card" style="width: 18rem; margin: 5px;">
                                <video width="100%" height="240" controls>
                                     <source src="<?php echo $fetch['location'] ?>">
                                 </video>
@@ -50,9 +44,9 @@ include "base/header.php";
                                     <li class="list-group-item text-center"><?php echo $fetch['video_name'] . ' - ' . $fetch['fecha']; ?></li>
                                     
                                 </ul>
-                               
+                                
                         </div>
-                    <?php } ?>
+                     <?php  } ?>
                 </div>
             </div>
                

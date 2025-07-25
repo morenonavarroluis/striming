@@ -9,28 +9,12 @@ include "config/conexion.php";
                 exit();
 
             }
-
-
- $id = $_SESSION['id']; 
-
-
-
-//consulta
-
-$consulta = "SELECT us.id ,us.username, us.password, r.roles FROM users as us
- INNER JOIN rols as r ON us.id_rol = r.id_rols";
-// Ejecutar la consulta
-$resultado = mysqli_query($conn, $consulta);
-
-
-   
-
  include "base/header.php";
 
 ?>
     <body class="sb-nav-fixed">
        <?php
-        include "base/navbar2.php";
+        include "base/navbar_consultor.php";
        
         include "modal/modal_usuario.php";
         ?>
@@ -43,10 +27,10 @@ $resultado = mysqli_query($conn, $consulta);
                       <div class="login-container">
         <h2>Cambiar Contraseña</h2>
 
-        <?php echo $message; // Display messages here ?>
+    
 
         
-        <form action="config/editor_password" method="POST">
+        <form action="config/con_password" method="POST">
             <div class="mb-3">
                 <input type="password" class="form-control" name="actual_password" placeholder="Contraseña Actual" required>
             </div>

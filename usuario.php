@@ -33,7 +33,7 @@ include "base/header.php";
     <div id="layoutSidenav_content">
         <main>
             <div class="container-fluid px-4">
-                <h1 class="mt-4">Videos</h1>
+                <h3 class="mt-4">MercalStream-videos</h3>
 
                 <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" style="float: right;">Nuevo Video</button>
                 <br>
@@ -41,7 +41,7 @@ include "base/header.php";
               <div class="container">
                 <div class="row">
                     <?php while ($fetch = mysqli_fetch_array($query)) { ?>      
-                        <div class="card" style="width: 21rem; margin: 5px;">
+                        <div class="card" style="width: 18rem; margin: 5px;">
                                <video width="100%" height="240" controls>
                                     <source src="<?php echo $fetch['location'] ?>">
                                 </video>
