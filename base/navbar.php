@@ -20,6 +20,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="datos_user"><i class="fas fa-users me-1"></i> Usuarios</a>
                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="personas_admin"><i class="fas fa-users me-1"></i>Personas</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="espacio_admin"><i class="fas fa-map-marker-alt me-1"></i> Espacio Libre</a>
                     </li>

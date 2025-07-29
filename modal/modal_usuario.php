@@ -8,10 +8,26 @@
       </div>
       <div class="modal-body">
         
+      <?php 
+         $persona = "SELECT * FROM personas";
+         $personas_result = mysqli_query($conn, $persona);
+        
+           
+         
+      ?>
     
       <form action="config/registroUsuario" method="POST">
         <input type="text" class="form-control" placeholder="Nombre de usuario" aria-label="Username" aria-describedby="basic-addon1" name="username" required>
         <input type="password" class="form-control mt-2" placeholder="Contraseña" aria-label="Password" aria-describedby="basic-addon1" name="password" required>
+        
+        <select class="form-select mt-2" aria-label="Default select example" name="persona" required>
+        
+        <option selected>persona</option>
+        <?php while ($row = mysqli_fetch_assoc($personas_result)) { ?>
+          <option value="<?php echo $row['id_persona']; ?>"><?php echo $row['nombre'] . "  " . $row['apellido'];?></option>
+        
+        <?php } ?>
+        </select>
         <select class="form-select mt-2" aria-label="Default select example" name="rol" required>
           <option selected>Seleccionar rol</option>
           <option value="1">Administrador</option>

@@ -5,10 +5,11 @@ include 'conexion.php';
 $usuario =$_POST['username'];
 $password = $_POST['password'];
 $pass_c = sha1($password); // Encriptar la contraseña
+$persona = $_POST['persona'];
 $rol = $_POST['rol'];
 
 // Preparar la consulta SQL para insertar el nuevo usuario
-$consulta = "INSERT INTO users (id,username, password, id_rol) VALUES (NULL,'$usuario','$pass_c' , '$rol');";
+$consulta = "INSERT INTO users (id,username, password, id_rol, id_personas ) VALUES (NULL,'$usuario','$pass_c' , '$rol','$persona');";
 
 $resultado = mysqli_query($conn, $consulta);
 //$resultado = $conn->query($consulta);
