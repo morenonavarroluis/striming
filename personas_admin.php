@@ -83,7 +83,7 @@ $resultado = mysqli_query($conn, $consulta);
                                                 <input type="hidden" name="id_persona" value="<?php echo $row['id_persona']; ?>">
                                                 <li><button type="submit" class="dropdown-item">Eliminar</button></li>
                                             </form>
-                                            <li><a class="dropdown-item" href="#">Ver</a></li>
+                                            
                                         </ul>
                                     </div>
                         </td>

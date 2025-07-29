@@ -39,7 +39,7 @@
                         <span class="d-none d-lg-inline">Usuario</span>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
-                        <li><a class="dropdown-item" href="#"><i class="fas fa-user-circle me-2"></i> Perfil</a></li>
+                        <li><a class="dropdown-item" href="perfil_admin"><i class="fas fa-user-circle me-2"></i> Perfil</a></li>
                         <li><a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i> Configuración</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item text-danger" href="config/logout"><i class="fas fa-sign-out-alt me-2"></i> Salir</a></li>

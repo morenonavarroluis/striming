@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- <link href="css/styles.css" rel="stylesheet" /> -->
    <link rel="stylesheet" href="css/tablas.css">
+   <link rel="stylesheet" href="css/perfil.css">
   </head>
 
 
