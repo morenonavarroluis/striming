@@ -33,13 +33,13 @@ include "base/header.php";
     <div id="layoutSidenav_content">
      
     <main>
-             
+
             <div class="container-fluid px-4">
                 <h3 class="mt-4">MercalStream-videos</h3>   
-              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" style="float: right;">Nuevo Video</button>
+              <button class="btn btn-primary mt" data-bs-toggle="modal" data-bs-target="#exampleModal" style="float: right;">Nuevo Video</button>
                 <br>
                 <br>
-            <div class="container">
+            <div class="container d-flex justify-content-center">
                 <div class="row">
                     <?php while ($fetch = mysqli_fetch_array($query)) { ?>      
                         <div class="card" style="width: 18rem; margin: 5px;">

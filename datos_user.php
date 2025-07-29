@@ -61,7 +61,7 @@ $resultado = mysqli_query($conn, $consulta);
                         <th>ID</th>
                         <th>Usuario</th>
                         <th>roles</th>
-                        <th  class="d-flex justify-content-center">accion</th>
+                        <th style="text-align: center;">accion</th>
                     </tr>
                 </thead>
                 <tbody>
